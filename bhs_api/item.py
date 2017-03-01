@@ -355,6 +355,10 @@ def create_slug(document, collection_name):
                    'He': u'וידאו',
                   },
     }
+
+    if 'Slug' in document:
+        return document['Slug']
+
     try:
         headers = document['Header'].items()
     except KeyError:
