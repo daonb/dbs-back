@@ -118,6 +118,7 @@ def test_update_person(app):
         )
         doc =  persons.find_one({'id':'I1'})
     assert doc['tree_version'] == 0
+    assert doc['Slug']['En'] == 'person_1;0.I1'
     # ensure we keep the old version
     with app.app_context():
         update_tree(dict(num=1,
